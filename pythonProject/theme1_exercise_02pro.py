@@ -20,34 +20,31 @@ numbers = [1014, 1321, 675, 1215, 56, 1386, 1385, 431, 1058, 486, 1434, 696, 101
 130, 1363, 947, 72, 1278, 166, 904, 349, 831, 1207, 1496, 370, 725, 926, 175, 959, 1282, 336, 1268, 351, 1439, 186,
 273, 1008, 231, 138, 142, 433, 456, 1268, 1018, 1274, 387, 120, 340, 963, 832, 1127]
 
-def filter_nums(num):
-
+def filter_nums(nums):
     xmin = 99
     xmax = 1000
+    anums = []
+    alter_nums = list(filter(lambda x: xmin < x < xmax and x % 5 ==2, nums))
+    for num in alter_nums:
+        num = num ** 3
+        anums.append(num)
+    for n in anums:
+        print(n)
 
-    if isinstance(numbers, (int, float, str, bytes)):
-        return []
-    else:
-        return xmin < num < xmax and num % 5 == 2
-
-def map_nums(nuns):
+def map_nums(nums):
     xmin = 99
     xmax = 1000
-    return [num for num in numbers if xmin < num < xmax and num % 5 == 2]
+    alter_nums = []
+    for num in nums:
+        if xmin < num < xmax and num % 5 == 2:
+            alter_nums.append(num)
 
-#Применение функции filter()
-outFilter = filter(filter_nums, numbers)
+    anums = list(map(lambda x: x ** 3, alter_nums))
+    for n in anums:
+        print(n)
 
-#Применение функции map()
-filteredNumbers = map_nums(numbers)
-mapCubes = map(lambda x: x ** 3, filteredNumbers)
+print("Вывод результатов функции filter_nums(): ")
+filter_nums(numbers)
+print("Вывод результатов функции map_nums(): ")
+map_nums(numbers)
 
-print("Вывод решени для функции filter():  ")
-for num in outFilter:
-    print(num ** 3)
-
-print("\n")
-print("Вывод решени для функции map():  ")
-
-for cube in mapCubes:
-    print(cube)
