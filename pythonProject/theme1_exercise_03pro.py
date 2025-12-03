@@ -12,7 +12,7 @@
 Файл 'example.txt' скопирован в папку 'test_folder'.
 Файл переименован в 'test_folder/copied_example.txt'.
 Папка 'test_folder' удалена.
-```
+```.
 '''
 import os
 import time
